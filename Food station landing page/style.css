@@ -1,0 +1,397 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-orange:  #FF4600;
+    --background: #f8f5f3;
+    --brown: #914B25;
+    --text-brown:  #301202;
+    --button-background: #457500;
+    --yellow: yellow;
+}
+
+@font-face {
+    font-family: Cairo;
+    src: url('assets/fonts/Cairo-Bold.ttf');
+}
+
+
+nav{
+    width: 100%;
+    height: 4rem;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow:0px 2px 5px var(--text-brown);
+    position: fixed;
+    top: 0;
+}
+
+.logo-title-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+    
+}
+
+.logo{
+    height: 3rem;
+    aspect-ratio: 824/549;
+    margin-left: 1rem;
+}
+
+.brand-name{
+    
+    color: var(--primary-orange);
+    font-size: 1.5rem;
+}
+
+.list-container{
+    width: 50vw;
+    height: 70vh;
+    background-color: var(--background);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: -80vw;
+    top: 0;
+    padding-top: 2rem;
+    transition: left .3s ease;
+/* This part is to make the glass effect */
+    background: rgba(255, 255, 255, 0.55); 
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.list-container.active{
+    left: 0rem;
+    /* top: 0rem; */
+}
+
+.burger-menu{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: transparent;
+    border: none;
+    margin-left: 1rem;
+     margin-right: auto;
+    z-index: 1000;
+}
+
+.bar{
+    width: 100%;
+    height: 3px;
+    background-color: var(--brown);
+    transition: all 0.3s ease;
+   
+}
+
+ .burger-menu.active #bar1{
+    transform: translateY(9px) rotate(45deg);
+ }
+
+  .burger-menu.active #bar2{
+    opacity: 0;
+ }
+
+  .burger-menu.active #bar3{
+    transform: translateY(-9px) rotate(-45deg);
+ }
+
+.list-container >li >a{
+    text-decoration: none;
+    /* font-family: Cairo, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-size: 1.2rem;
+    color: var(--brown);
+    line-height: 3;
+    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    scroll-margin-top: 100px;
+    padding: 2rem;
+    
+}
+
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.5rem;
+
+
+}
+
+.hero-section > .image-container{
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container > img{
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    
+}
+
+.button{
+    text-decoration: none;
+    width: 10rem;
+    line-height: 3rem;
+    background-color: var(--button-background);
+    color: var(--background);
+    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+    border: transparent;
+    border-radius: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;   
+    
+}
+
+.who-we-are{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title, .section-title{
+   color: var(--brown);
+   margin-bottom: 1rem;
+  
+}
+
+
+.section-text{
+    font-size: .9rem;
+    /* color:var(--text-brown);
+    display: block;
+    text-align: center; */
+}
+
+.meals-section{
+    display: flex;
+    flex-direction: column;
+}
+.meal-card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+.meal-img-container{
+    width: 100%;
+   
+}
+
+.meal-image{
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+     border-radius: 15px;
+}
+
+.meal-details > h3,
+.meal-details > p,
+.section-text,
+.meal-code{
+    color: var(--text-brown);
+    display: block;
+    text-align: center;
+}
+
+.meal-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/*    Reviews section*/
+
+.reviews-cards-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-card{
+    width: 100%;
+    border: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.name{
+    color: var(--brown);
+}
+
+.links{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 4rem;
+    cursor: pointer;
+
+}
+
+.link > a{
+    text-decoration: none;
+}
+
+.social-logo{
+    width: 3rem;
+    transition: .5s ease;
+}
+
+.social-logo:hover{
+    outline:.3rem solid var(--brown);
+}
+
+footer{
+    height: 3rem;
+    width: 100%;
+    background-color: var(--button-background);
+}
+
+.footer-link-continer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-link{
+    text-decoration: none;
+    color: white;
+    font-size: .8rem;
+    cursor: pointer;
+    transition: color .3s ease;
+}
+
+.footer-link:hover{
+    color: var(--yellow);
+}
+@media (min-width: 800px){
+
+    body{
+        margin: 0 5rem;
+        
+    }
+
+    
+
+    nav{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .brand-name{
+         font-size: 2rem;
+    }
+
+    .burger-menu{
+        display: none;
+    }
+
+    .logo-title-container{
+        margin-left:auto;
+    }
+
+    .list-container{
+        width: auto;
+        height: 4rem;
+        background: none;
+        padding-top: 0;/* to cancle previous padding-top*/
+        padding-left: 1rem;
+        position: static;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+       /* this part is to cancle the glass effect */
+       /* background: rgba(255, 255, 255, 0.55);  */
+        box-shadow: none;
+        backdrop-filter:none;
+        border: none;        
+    }
+
+    .list-container > li >a{
+        margin-right: 2rem;
+        font-size: 1rem;
+    }
+
+
+    .hero-section{
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-around;
+        
+    }
+
+    .who-we-are{
+        width: 40%;
+
+    }
+
+    .button{
+        cursor: pointer;
+        transition: color .3s ease; 
+    }
+
+    .button:hover{
+        color: var(--yellow);
+    }
+
+   
+    .image-container > img{
+        height: 75vh;
+    }
+
+    .hero-title{
+        margin-top: 0;
+        }
+    
+    .meal-cards-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 1rem;
+        overflow: auto;
+    }
+}
